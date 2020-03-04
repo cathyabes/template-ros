@@ -19,9 +19,11 @@ RUN /utils/build_check "${REPO_NAME}" "${MAINTAINER}"
 
 # define repository path
 ARG REPO_PATH="${CATKIN_WS_DIR}/src/${REPO_NAME}"
+ARG LAUNCH_PATH="${LAUNCH_DIR}/${REPO_NAME}"
 
 # create repo directory
 RUN mkdir -p "${REPO_PATH}"
+RUN mkdir -p "${LAUNCH_PATH}"
 WORKDIR "${REPO_PATH}"
 
 # build ROS packages
